@@ -1,0 +1,2 @@
+rootProject.name = 'motivate-me'
+include "promise-service", "rating-service", "data-service"
