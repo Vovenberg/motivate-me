@@ -17,28 +17,29 @@ public class AppConfig {
 
     private static final Logger log = LoggerFactory.getLogger(AppConfig.class);
 
-    @Bean
-    public CommandLineRunner demo(UserRepository userRepository,
-                                  PromiseRepository promiseRepository) {
-        return (args -> {
-            log.info("Users are creating..");
-            log.info("-------------------------------");
-            userRepository.save(new User("Vova", 24));
-            userRepository.save(new User("Petya", 20));
-
-            log.info("Users found with findAll():");
-            userRepository.findAll().forEach(user -> log.info(user.toString()));
-            log.info("---------------------------------------------------------");
-
-
-            log.info("Promises are creating..");
-            log.info("-------------------------------");
-            promiseRepository.save(new Promise("Read books", "qweqwew"));
-            promiseRepository.save(new Promise("Run every day", "xcvxcvxcv"));
-
-            log.info("Promises found with findAll():");
-            promiseRepository.findAll().forEach(promise -> log.info(promise.toString()));
-            log.info("-------------------------------");
-        });
-    }
+//   useless after adding liquibase
+//    @Bean
+//    public CommandLineRunner demo(UserRepository userRepository,
+//                                  PromiseRepository promiseRepository) {
+//        return (args -> {
+//            log.info("Users are creating..");
+//            log.info("-------------------------------");
+//            userRepository.save(new User("Vova", 24));
+//            userRepository.save(new User("Petya", 20));
+//
+//            log.info("Users found with findAll():");
+//            userRepository.findAll().forEach(user -> log.info(user.toString()));
+//            log.info("---------------------------------------------------------");
+//
+//
+//            log.info("Promises are creating..");
+//            log.info("-------------------------------");
+//            promiseRepository.save(new Promise("Read books", "qweqwew"));
+//            promiseRepository.save(new Promise("Run every day", "xcvxcvxcv"));
+//
+//            log.info("Promises found with findAll():");
+//            promiseRepository.findAll().forEach(promise -> log.info(promise.toString()));
+//            log.info("-------------------------------");
+//        });
+//    }
 }

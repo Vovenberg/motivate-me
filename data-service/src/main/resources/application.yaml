@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: motivate-me
+
+
+  jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+      use-new-id-generator-mappings: true
+    properties:
+      hibernate:
+#        cache:
+#          use_second_level_cache: true
+#          use_query_cache: false
+#          region.factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
+        jdbc.lob.non_contextual_creation: true
+        javax.cache.provider: org.ehcache.jsr107.EhcacheCachingProvider
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:32777/postgres
+    username: postgres
+    password:
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml

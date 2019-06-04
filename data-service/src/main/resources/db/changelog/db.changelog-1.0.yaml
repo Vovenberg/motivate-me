@@ -1,0 +1,81 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 000000
+      author: Vldmr
+      changes:
+        - createSequence:
+            sequenceName: hibernate_sequence
+            startValue: 20000
+            incrementBy: 1
+
+  - changeSet:
+      id: 000000-create-table-promises
+      author: Vldmr
+      changes:
+          - createTable:
+                tableName: promise
+                columns:
+                    - column: { name: id, type: bigint }
+                    - column: { name: title, type: varchar(255) }
+                    - column: { name: description, type: varchar(255) }
+                    - column: { name: is_active, type: bool }
+
+  - changeSet:
+      id: 000001-update-data-promises
+      author: Vldmr
+      context: local
+      changes:
+        - loadUpdateData:
+            encoding: UTF-8
+            file: db/changelog/data/promises.csv
+            separator: ';'
+            tableName: promise
+            primaryKey: id
+
+
+  - changeSet:
+      id: 000000-create-table-promise-type
+      author: Vldmr
+      changes:
+          - createTable:
+                tableName: promise_type
+                columns:
+                    - column: { name: id, type: bigint }
+                    - column: { name: name, type: varchar(255) }
+
+  - changeSet:
+      id: 000001-update-data-promise-type
+      author: Vldmr
+      context: local
+      changes:
+        - loadUpdateData:
+            encoding: UTF-8
+            file: db/changelog/data/promise-type.csv
+            separator: ';'
+            tableName: promise_type
+            primaryKey: id
+
+  - changeSet:
+      id: 000000-create-table-user
+      author: Vldmr
+      changes:
+          - createTable:
+                tableName: user
+                columns:
+                    - column: { name: id, type: bigint }
+                    - column: { name: name, type: varchar(255) }
+                    - column: { name: age, type: int }
+
+  - changeSet:
+      id: 000001-update-data-user
+      author: Vldmr
+      context: local
+      changes:
+        - loadUpdateData:
+            encoding: UTF-8
+            file: db/changelog/data/user.csv
+            separator: ';'
+            tableName: user
+            primaryKey: id
+

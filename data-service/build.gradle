@@ -9,6 +9,9 @@ apply plugin: 'io.spring.dependency-management'
 
 
 dependencies {
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
+    compile group: 'org.liquibase', name: 'liquibase-core', version: '3.6.3'
+
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 //	implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
