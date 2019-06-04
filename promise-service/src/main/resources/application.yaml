@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: motivate-me-promise
+
+  rabbitmq:
+    host: localhost
+    port: 32778
+    username: guest
+    password: guest
+
+server:
+  port: 8082

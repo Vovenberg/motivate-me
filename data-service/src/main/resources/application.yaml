@@ -1,8 +1,6 @@
 spring:
   application:
-    name: motivate-me
-
-
+    name: motivate-me-data
   jpa:
     open-in-view: false
     database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -26,3 +24,13 @@ spring:
 
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml
+
+
+  rabbitmq:
+    host: localhost
+    port: 32778
+    username: guest
+    password: guest
+
+server:
+  port: 8081
