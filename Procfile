@@ -1,1 +1,1 @@
-web: ./gradlew data-service:bootRun
+web: ./gradlew data-service:bootRun -Pport=$PORT

@@ -8,6 +8,7 @@ apply plugin: 'io.spring.dependency-management'
 
 bootRun {
     bootRun.systemProperty 'spring.profiles.active', "${springProfile}"
+    bootRun.systemProperty 'server.port', "${port}"
 }
 task stage(dependsOn: ['build', 'clean'])
 build.mustRunAfter clean
