@@ -7,6 +7,7 @@ plugins {
 apply plugin: 'io.spring.dependency-management'
 
 bootRun {
+    systemProperties System.properties
     bootRun.systemProperty 'spring.profiles.active', "${springProfile}"
     bootRun.systemProperty 'server.port', "${port}"
 }
