@@ -16,11 +16,6 @@ spring:
         jdbc.lob.non_contextual_creation: true
         javax.cache.provider: org.ehcache.jsr107.EhcacheCachingProvider
 
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:32777/postgres
-    username: postgres
-    password:
 
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml

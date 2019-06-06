@@ -1,21 +1,31 @@
 package com.killproject.motivateme.data.config;
 
-import com.killproject.motivateme.data.dto.Promise;
-import com.killproject.motivateme.data.dto.User;
-import com.killproject.motivateme.data.repository.PromiseRepository;
-import com.killproject.motivateme.data.repository.UserRepository;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.context.annotation.Profile;
+
+import javax.sql.DataSource;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "com.killproject.motivateme.data.repository")
+@Profile("heroku")
 public class AppConfig {
 
     private static final Logger log = LoggerFactory.getLogger(AppConfig.class);
+
+    @Bean
+    public DataSource dataSource() {
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl("jdbc:postgresql://localhost:32777/postgres");
+        config.setUsername("postgres");
+        config.setPassword("");
+        config.setDriverClassName("org.postgresql.Driver");
+        return new HikariDataSource(config);
+    }
+
 
 //   useless after adding liquibase
 //    @Bean

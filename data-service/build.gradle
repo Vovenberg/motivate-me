@@ -6,7 +6,9 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 
-
+bootRun {
+    bootRun.systemProperty 'spring.profiles.active', "${springProfile}"
+}
 
 dependencies {
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
