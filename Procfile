@@ -1,1 +1,1 @@
-web: ./gradlew -Xmx300m -Xss512k -XX:CICompilerCount=2 data-service:bootRun -Pport=$PORT
+web: ./gradlew data-service:bootRun -Xmx300m -Xss512k -XX:CICompilerCount=2 -Pport=$PORT
