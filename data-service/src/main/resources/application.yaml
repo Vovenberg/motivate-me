@@ -27,5 +27,13 @@ spring:
     username: guest
     password: guest
 
+#  security:
+#    require-ssl: true
+
 server:
   port: 8081
+#  ssl:
+#    key-store: classpath:.keystore
+#    key-store-password: 123456
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
